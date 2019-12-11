@@ -11,6 +11,7 @@ namespace Modelo_Console_POO
         static void Main(string[] args)
         {
             Console.WriteLine("Primeiro Programa Console");
+            Console.WriteLine("Bom dia =)");
             Console.ReadLine();
         }
     }
