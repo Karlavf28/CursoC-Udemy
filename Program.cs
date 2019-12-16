@@ -37,6 +37,7 @@ namespace Modelo_Console_POO
             Console.WriteLine("1 - Entrar na sessao restrita com usuario e senha");
             Console.WriteLine("2 - Fazer uma soma de dois numeros");
             Console.WriteLine("3 - Calcular a Area de um Triangulo");
+
             Console.Write("Digite sua opcao:");
 
         }
@@ -48,13 +49,14 @@ namespace Modelo_Console_POO
             if (int.Parse(Opcao) == 1)
             {
                 
-                Opcao_Usuario();
+                Opcao_Acesso_Restrito();
+                
                 TelaInicial();
 
             }
             else if (int.Parse(Opcao) == 2)
             {
-                Soma();
+                Opcao_Soma();
                 TelaInicial();
 
             }
@@ -72,7 +74,7 @@ namespace Modelo_Console_POO
            
         }
 
-        static void Opcao_Usuario()
+        static void Opcao_Acesso_Restrito()
         {
             Usuario x;
 
@@ -82,9 +84,23 @@ namespace Modelo_Console_POO
             x.ConfereLogin();
             x.ConfereSenha();
 
+            if (x.ok_senha && x.ok_login)
+            {
+                Produto y;
+                y = new Produto();
+
+
+                y.AdicionarEstoque();
+                y.RemoverEstoque();
+
+                Console.WriteLine("Resumo do estoque: " + y);
+            }
+            else
+                Console.WriteLine("Acesso Negado");
+
         }
 
-        static void Soma()
+        static void Opcao_Soma()
         {
             double num_A;
             double num_B;
@@ -103,7 +119,6 @@ namespace Modelo_Console_POO
             Console.WriteLine("Resultado da Soma:");
 
             Console.WriteLine(resultado.ToString("F3", CultureInfo.InvariantCulture));
-
 
 
         }

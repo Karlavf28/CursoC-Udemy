@@ -5,18 +5,19 @@ namespace Modelo_Console_POO
     {
         public string login;
         public string senha;
-
+        public bool ok_login;
+        public bool ok_senha;
 
         public Usuario()
         {
 
             Console.WriteLine("Digite o login:");
             login = Console.ReadLine();
-           
+            ConfereLogin();
 
             Console.WriteLine("Digite a senha:");
             senha = Console.ReadLine();
-
+            ConfereSenha();
 
         }
 
@@ -28,15 +29,23 @@ namespace Modelo_Console_POO
             resultado = senha_correta.Equals(senha);
 
             if (resultado)
+            {
                 Console.WriteLine("Senha Correta.");
+                ok_senha = true;
+            }
+                
             else
+            {
                 Console.WriteLine("Senha Incorreta");
+                ok_senha = false;
+            }
+                
 
 
         }
 
 
-        public void ConfereLogin()
+       public void ConfereLogin()
         {
             string login_correto = "karlavf28";
             bool resultado = false;
@@ -45,9 +54,17 @@ namespace Modelo_Console_POO
             resultado = login_correto.Equals(login);
 
             if (resultado)
+            {
                 Console.WriteLine("Login Correto.");
+                ok_login = true;
+            }
+                
             else
+            {
                 Console.WriteLine("Este Login nao existe");
+                ok_login = false;
+            }
+                
 
         }
     }
