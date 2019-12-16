@@ -29,42 +29,58 @@ namespace Modelo_Console_POO
         }
 
 
-        static void ConfereSenha()
+        static void TelaInicial()
         {
-            string senha_correta = "2323BB";
-            bool resultado = false;
-
-
-            Console.WriteLine("Digite a senha:");
-            string resposta = Console.ReadLine();
-
-
-            resultado = senha_correta.Equals(resposta);
-
-            if (resultado)
-                Console.WriteLine("Senha Correta.");
-            else
-                Console.WriteLine("Senha Incorreta");
-
-
+            Console.WriteLine();
+            Console.WriteLine("Escolha uma das opcoes abaixo:");
+            Console.WriteLine();
+            Console.WriteLine("1 - Entrar na sessao restrita com usuario e senha");
+            Console.WriteLine("2 - Fazer uma soma de dois numeros");
+            Console.WriteLine("3 - Calcular a Area de um Triangulo");
+            Console.Write("Digite sua opcao:");
 
         }
 
-        static void ConfereLogin()
+
+        static void VerificaOpcao(string Opcao)
         {
-            string login_correto = "karlavf28";
-            bool resultado = false;
 
-            Console.WriteLine("Digite o login:");
-            string resposta = Console.ReadLine();
+            if (int.Parse(Opcao) == 1)
+            {
+                
+                Opcao_Usuario();
+                TelaInicial();
 
+            }
+            else if (int.Parse(Opcao) == 2)
+            {
+                Soma();
+                TelaInicial();
 
-            resultado = login_correto.Equals(resposta);
-
-            if (resultado)
-                Console.WriteLine("Login Correto.");
+            }
+            else if(int.Parse(Opcao) == 3)
+            {
+                Opcao_Triangulo();
+                TelaInicial();
+            }
             else
-                Console.WriteLine("Este Login nao existe");
+            {
+                Console.WriteLine("Finalizando");
+
+            }
+
+           
+        }
+
+        static void Opcao_Usuario()
+        {
+            Usuario x;
+
+            Console.WriteLine();
+
+            x = new Usuario();
+            x.ConfereLogin();
+            x.ConfereSenha();
 
         }
 
@@ -74,6 +90,7 @@ namespace Modelo_Console_POO
             double num_B;
             double resultado = 0;
 
+            Console.WriteLine();
 
             Console.WriteLine("Digite o primeiro numero");
             num_A = double.Parse(Console.ReadLine());
@@ -91,65 +108,19 @@ namespace Modelo_Console_POO
 
         }
 
-        static void TelaInicial()
+        static void Opcao_Triangulo()
         {
-            Console.WriteLine("Escolha uma das opcoes abaixo:"); 
-            Console.WriteLine("1 - Entre na secao restrita");
-            Console.WriteLine("2 - Fazer uma soma");
-            Console.WriteLine("3 - Area do Triangulo");
-            Console.WriteLine("Digite sua opcao:");
+            Triangulo y;
 
-        }
+            Console.WriteLine();
 
-        static void VerificaOpcao(string Opcao)
-        {
+            y = new Triangulo();
+      
+            double area = y.Area();
 
-            if (int.Parse(Opcao) == 1)
-            {
-                ConfereLogin();
-                ConfereSenha();
-                TelaInicial();
+            Console.WriteLine();
 
-
-            }
-            else if (int.Parse(Opcao) == 2)
-            {
-                Soma();
-                TelaInicial();
-
-            }
-            else if(int.Parse(Opcao) == 3)
-            {
-                AreaDoTriangulo();
-                TelaInicial();
-            }
-            else
-            {
-                Console.WriteLine("Finalizando");
-
-            }
-
-           
-        }
-
-        static void AreaDoTriangulo()
-        {
-            Triangulo x;
-            x = new Triangulo();
-
-            Console.WriteLine("Digite os tres lados do Triangulo e aperte enter");
-            string Lados = Console.ReadLine();
-
-            string[] vet = Lados.Split(' ');
-             x.Medida_A = int.Parse(vet[0]);
-             x.Medida_B = int.Parse(vet[1]);
-             x.Medida_C = int.Parse(vet[2]);
-
-            double p = (x.Medida_A + x.Medida_B + x.Medida_C)/2.0; //calculo do perimetro
-
-            double area = Math.Sqrt(p * (p - x.Medida_A) * (p - x.Medida_B) * (p - x.Medida_C)); //calculo da area
-
-            Console.WriteLine("A area do triangulo e" + area.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine("A area do triangulo e " + area.ToString("F2", CultureInfo.InvariantCulture));
 
 
         }
