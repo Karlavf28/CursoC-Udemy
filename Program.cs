@@ -10,7 +10,6 @@ namespace Modelo_Console_POO
 
             string opcao = "0";
 
-
             Console.WriteLine("Ola. Seja bem vindo ao seu primeiro programa em C# =)");
 
             TelaInicial();
@@ -19,7 +18,7 @@ namespace Modelo_Console_POO
             opcao = Console.ReadLine();
 
 
-          while(int.Parse(opcao)!=3)
+          while(int.Parse(opcao)!=4)
             {
                 VerificaOpcao(opcao);
                 opcao = "0";
@@ -97,7 +96,7 @@ namespace Modelo_Console_POO
             Console.WriteLine("Escolha uma das opcoes abaixo:"); 
             Console.WriteLine("1 - Entre na secao restrita");
             Console.WriteLine("2 - Fazer uma soma");
-            Console.WriteLine("3 - Fechar programa");
+            Console.WriteLine("3 - Area do Triangulo");
             Console.WriteLine("Digite sua opcao:");
 
         }
@@ -119,6 +118,11 @@ namespace Modelo_Console_POO
                 TelaInicial();
 
             }
+            else if(int.Parse(Opcao) == 3)
+            {
+                AreaDoTriangulo();
+                TelaInicial();
+            }
             else
             {
                 Console.WriteLine("Finalizando");
@@ -126,6 +130,28 @@ namespace Modelo_Console_POO
             }
 
            
+        }
+
+        static void AreaDoTriangulo()
+        {
+            Triangulo x;
+            x = new Triangulo();
+
+            Console.WriteLine("Digite os tres lados do Triangulo e aperte enter");
+            string Lados = Console.ReadLine();
+
+            string[] vet = Lados.Split(' ');
+             x.Medida_A = int.Parse(vet[0]);
+             x.Medida_B = int.Parse(vet[1]);
+             x.Medida_C = int.Parse(vet[2]);
+
+            double p = (x.Medida_A + x.Medida_B + x.Medida_C)/2.0; //calculo do perimetro
+
+            double area = Math.Sqrt(p * (p - x.Medida_A) * (p - x.Medida_B) * (p - x.Medida_C)); //calculo da area
+
+            Console.WriteLine("A area do triangulo e" + area.ToString("F2", CultureInfo.InvariantCulture));
+
+
         }
     }
     }
