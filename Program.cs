@@ -18,7 +18,7 @@ namespace Modelo_Console_POO
             opcao = Console.ReadLine();
 
 
-          while(int.Parse(opcao)!=4)
+          while(int.Parse(opcao)!=5)
             {
                 VerificaOpcao(opcao);
                 opcao = "0";
@@ -37,7 +37,9 @@ namespace Modelo_Console_POO
             Console.WriteLine("1 - Entrar na sessao restrita com usuario e senha");
             Console.WriteLine("2 - Fazer uma soma de dois numeros");
             Console.WriteLine("3 - Calcular a Area de um Triangulo");
-
+            Console.WriteLine("4 - Cadastrar Cliente");
+            Console.WriteLine("5 - Finalizar Programa");
+            Console.WriteLine();
             Console.Write("Digite sua opcao:");
 
         }
@@ -63,6 +65,11 @@ namespace Modelo_Console_POO
             else if(int.Parse(Opcao) == 3)
             {
                 Opcao_Triangulo();
+                TelaInicial();
+            }
+            else if(int.Parse(Opcao)== 4 )
+            {
+                Opcao_Cadastro_Cliente();
                 TelaInicial();
             }
             else
@@ -114,7 +121,7 @@ namespace Modelo_Console_POO
             Console.WriteLine("Digite o primeiro numero");
             num_B = double.Parse(Console.ReadLine());
 
-            resultado = num_A + num_B;
+            resultado = Calculadora.Soma(num_A, num_B);
 
             Console.WriteLine("Resultado da Soma:");
 
@@ -138,6 +145,46 @@ namespace Modelo_Console_POO
             Console.WriteLine("A area do triangulo e " + area.ToString("F2", CultureInfo.InvariantCulture));
 
 
+        }
+
+        static void Opcao_Cadastro_Cliente()
+        {
+            
+            Cliente exemplo, atual;
+
+            exemplo = new Cliente("Carlos", "32342334", "16/06/90", "carlos@gmail.com");
+            atual = new Cliente();
+           
+
+            Console.WriteLine("Digite 1 para cadastro simples, 2 para cadastro completo ou 3 para ver exemplo");
+            string resposta = Console.ReadLine();
+
+            if(resposta == "1")
+            {
+                atual.CadastroSimples();
+                Console.WriteLine();
+
+                Console.WriteLine("Cliente Cadastrado: ");
+                atual.ConferirDadosCliente();
+                Console.WriteLine();
+
+            }
+            else if(resposta=="2")
+            {
+                atual.CadastroCompleto();
+                Console.WriteLine();
+
+                Console.WriteLine("Cliente Cadstrado: ");
+                atual.ConferirDadosCliente();
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("Exemplo de cadastro completo: ");
+                exemplo.ConferirDadosCliente();
+                Console.WriteLine();
+            }
+            
         }
     }
     }

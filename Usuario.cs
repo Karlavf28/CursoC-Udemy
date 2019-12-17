@@ -8,6 +8,7 @@ namespace Modelo_Console_POO
         public bool ok_login;
         public bool ok_senha;
 
+        //Construtor
         public Usuario()
         {
 
@@ -20,6 +21,8 @@ namespace Modelo_Console_POO
             ConfereSenha();
 
         }
+
+        /*Metodos*/
 
         public void ConfereSenha()
         {

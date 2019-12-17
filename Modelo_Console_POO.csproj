@@ -47,6 +47,8 @@
     <Compile Include="Triangulo.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Produto.cs" />
+    <Compile Include="Calculadora.cs" />
+    <Compile Include="Cliente.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
