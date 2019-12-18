@@ -34,6 +34,7 @@ namespace Modelo_Console_POO
             Console.WriteLine();
             Console.WriteLine("Escolha uma das opcoes abaixo:");
             Console.WriteLine();
+            Console.WriteLine("0 - Veja os Dados da Empresa");
             Console.WriteLine("1 - Entrar na sessao restrita com usuario e senha");
             Console.WriteLine("2 - Fazer uma soma de dois numeros");
             Console.WriteLine("3 - Calcular a Area de um Triangulo");
@@ -48,6 +49,14 @@ namespace Modelo_Console_POO
         static void VerificaOpcao(string Opcao)
         {
 
+            if (int.Parse(Opcao) == 0)
+            {
+
+                Opcao_Empresa();
+
+                TelaInicial();
+
+            }
             if (int.Parse(Opcao) == 1)
             {
                 
@@ -79,6 +88,25 @@ namespace Modelo_Console_POO
             }
 
            
+        }
+
+        static void Opcao_Empresa()
+        {
+            DadosEmpresa x;
+
+            x = new DadosEmpresa("MicroFarad","23.345.0001/01", "Ativo" );
+
+            Console.WriteLine("Ultimos dados:" );
+
+            Console.WriteLine(x);
+
+            Console.WriteLine("Qual novo status atual?");
+            x.Status = Console.ReadLine();
+
+            Console.WriteLine("Dados atualizados: " + x);
+
+
+
         }
 
         static void Opcao_Acesso_Restrito()
