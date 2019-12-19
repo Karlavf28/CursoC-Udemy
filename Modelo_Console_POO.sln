@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POO_Parte_1", "POO_Parte_1\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "POO_Parte_1", "POO_Parte_1", "{085D7CDF-0FDC-4CC6-BE43-612DF80B9148}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "POO_Parte_2", "POO_Parte_2", "{D6DF51D6-B258-463E-BF76-A1C449D63FE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POO_Parte_2", "POO_Parte_2\POO_Parte_2.csproj", "{E119414F-D130-451E-93AF-9A258EB79A17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,10 @@ Global
 		{78CE7F1D-8A31-4F24-ABEB-59D3090505E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78CE7F1D-8A31-4F24-ABEB-59D3090505E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78CE7F1D-8A31-4F24-ABEB-59D3090505E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E119414F-D130-451E-93AF-9A258EB79A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E119414F-D130-451E-93AF-9A258EB79A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E119414F-D130-451E-93AF-9A258EB79A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E119414F-D130-451E-93AF-9A258EB79A17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -26,5 +34,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{78CE7F1D-8A31-4F24-ABEB-59D3090505E9} = {085D7CDF-0FDC-4CC6-BE43-612DF80B9148}
+		{E119414F-D130-451E-93AF-9A258EB79A17} = {D6DF51D6-B258-463E-BF76-A1C449D63FE0}
 	EndGlobalSection
 EndGlobal
