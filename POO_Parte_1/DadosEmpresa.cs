@@ -39,6 +39,7 @@ namespace Modelo_Console_POO
                 }
         }
 
+        //Para retornar string de dados completa
 
         public override string ToString()
         {

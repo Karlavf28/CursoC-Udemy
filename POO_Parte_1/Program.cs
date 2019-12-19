@@ -18,7 +18,7 @@ namespace Modelo_Console_POO
             opcao = Console.ReadLine();
 
 
-          while(int.Parse(opcao)!=5)
+          while(int.Parse(opcao)!=6)
             {
                 VerificaOpcao(opcao);
                 opcao = "0";
@@ -39,7 +39,8 @@ namespace Modelo_Console_POO
             Console.WriteLine("2 - Fazer uma soma de dois numeros");
             Console.WriteLine("3 - Calcular a Area de um Triangulo");
             Console.WriteLine("4 - Cadastrar Cliente");
-            Console.WriteLine("5 - Finalizar Programa");
+            Console.WriteLine("5 - Conta Bancaria");
+            Console.WriteLine("6 - Finalizar Programa");
             Console.WriteLine();
             Console.Write("Digite sua opcao:");
 
@@ -213,6 +214,25 @@ namespace Modelo_Console_POO
                 Console.WriteLine();
             }
             
+        }
+
+        static void Opcao_Banco()
+        {
+            ContaBanco x;
+            x = new ContaBanco();
+
+
+            Console.WriteLine("Digita o nome do titular da conta:");
+           // x.Nome = Console.Read();
+
+            Console.WriteLine("Digita o numero da conta:");
+            //x.Nome = Console.Read();
+
+
+
+
+
+
         }
     }
     }
